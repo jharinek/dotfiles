@@ -1,0 +1,82 @@
+[user]
+	name = Jozef Harinek
+	email = j.harinek@gmail.com
+[core]
+  editor = "nvim"
+  pager = diff-so-fancy | less --tabs=4 -RSX -+F
+[merge]
+  tool = opendiff
+  conflictstyle = diff3
+[color]
+  branch = auto
+  diff = auto
+  status = auto
+  ui = true
+[diff]
+  renames = copies
+[push]
+  default = simple
+  followTags = true
+[color "branch"]
+  current = yellow reverse
+  local = yellow
+  remote = green
+[color "diff"]
+  renames = copies
+  meta = 227
+  frag = magenta bold
+  old = red bold
+  new = green bold
+  commit = 227 bold
+  whitespace = red reverse
+[color "status"]
+  added = yellow
+  changed = green
+  untracked = cyan
+[alias]
+  df = diff
+  co = checkout
+  cp = cherry-pick
+  cl = clone
+  cm = "!git add . && git diff --cached && git commit -a"
+  dc = "!__git_discard() { git reset \"$1\" && git co \"$1\"; }; __git_discard"
+  st = status
+  ps = push origin
+  pp = push origin master
+  br = branch
+  cc = clean-checkout
+  fo = fetch origin
+  rpull = pull --rebase
+
+  # List aliases
+  la = "!git config -l | grep alias | cut -c 7-"
+
+  # List commits in short form with branch/tag annotations
+  ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+
+
+  # List commits in short form with branch/tag annotations wit graph, use -p to see diffs
+  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+  lp = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit -p
+
+  # List commits with files changed
+  ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+
+  # List commits with relative dates
+  ld = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative
+
+  # Find file and content in codebase
+  f = "!git ls-files | grep -i"
+
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+[color "diff-highlight"]
+  oldNormal = red bold
+  oldHighlight = red bold 52
+  newNormal = green bold
+  newHighlight = green bold 22
+[diff-so-fancy]
+  stripLeadingSymbols = false

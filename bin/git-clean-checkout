@@ -1,0 +1,11 @@
+#!/bin/bash
+
+git fetch origin
+git co master
+
+if [ `git branch --list $1` ]
+then
+  git branch -D $1
+fi
+
+git co -t origin/$1

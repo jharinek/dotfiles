@@ -1,0 +1,26 @@
+#!/bin/bash
+
+echo "> Installing configuration files ..."
+
+ln -s .ackrc ~/
+ln -s .agignore ~/
+ln -s .bowerrc ~/
+ln -s .config/fish ~/.config/
+ln -s .config/nvim ~/.config/
+ln -s .ctags ~/
+ln -s .curlrc ~/
+ln -s .gemrc ~/
+ln -s .gitconfig ~/
+ln -s .hushlogin ~/
+ln -s .inputrc ~/
+ln -s .tmux.conf ~/
+ln -s .vim ~/
+ln -s vimrc ~/
+cp -f ./Library/KeyBindings/DefaultKeyBinding.dict ~/Library/KeyBindings/
+ln -s bin ~/
+ln -s spectacle.json ~/Library/Application\ Support/Spectacle/Shortcuts.json
+ln -s .tmuxinator ~/
+
+echo "> Setting up Vim ..."
+mkdir -v ~/.config/nvim/{tmp,tmp/backup,undo}
+curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
