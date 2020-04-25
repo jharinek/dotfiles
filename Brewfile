@@ -1,50 +1,66 @@
-cask_args appdir: "/Applications"
+tap 'homebrew/bundle'
+tap 'homebrew/cask'
+tap 'homebrew/cask-versions'
+tap 'homebrew/core'
 
-tap "homebrew/bundle"
-tap "homebrew/cask"
-tap "homebrew/cask-versions"
-tap "homebrew/core"
-brew "ack"
-brew "bash"
-brew "bower"
-brew "cmake"
-brew "coreutils"
-brew "diff-so-fancy"
-brew "findutils"
-brew "fish"
-brew "fzf"
-brew "git"
-brew "grc"
-brew "htop"
-brew "imagemagick"
-brew "memcached"
-brew "moreutils"
-brew "neovim"
-brew "ngrep"
-brew "node"
-brew "postgresql"
-brew "rbenv"
-brew "reattach-to-user-namespace"
-brew "redis"
-brew "sqlite"
-brew "the_silver_searcher"
+brew 'cask'
+
+# GNU utilities
+brew 'coreutils'
+brew 'findutils'
+brew 'moreutils'
+
+# OS overrides
+brew 'grep'
+brew 'gnu-sed', args: ['with-default-names']
 brew "tmux"
 brew "tmux-mem-cpu-load"
-brew "vim"
-brew "watchman"
-brew "zsh"
-cask "dropbox"
-cask "firefox"
-cask "github"
-cask "google-chrome"
-cask "iterm2"
-cask "opera"
-cask "pgadmin3"
-cask "phantomjs"
-cask "slack"
-cask "spectacle"
-cask "spotify"
-cask "telegram"
-cask "the-unarchiver"
-cask "tunnelblick"
-cask "whatsapp"
+brew 'vim', args: ['override-system-vi']
+
+# Shells
+brew 'bash'
+brew 'fish'
+
+# Git
+brew 'git'
+#brew 'diff-so-fancy'
+
+# Utilities
+brew 'ack'
+brew 'cmake'
+brew 'fzf'
+brew 'grc'
+brew 'htop'
+brew 'neovim'
+brew 'p7zip'
+brew 'rename'
+brew 'tree'
+brew 'the_silver_searcher'
+brew 'unrar'
+brew 'xz'
+
+# Ruby
+brew 'rbenv'
+brew 'rbenv-bundler'
+brew 'ruby-build'
+
+# Node
+brew 'nvm'
+
+##
+## Applications
+
+cask_args appdir: '/Applications'
+
+cask 'visual-studio-code'
+cask 'google-chrome'
+cask 'github'
+cask 'iterm2'
+cask 'ngrok'
+cask 'slack'
+cask 'spectacle'
+cask 'spotify'
+cask 'the-unarchiver'
+cask 'whatsapp'
+cask 'dropbox'
+cask 'firefox'
