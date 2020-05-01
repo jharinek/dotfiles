@@ -17,10 +17,10 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 ###############################################################################
 
 # Set computer name (as done via System Preferences → Sharing)
-sudo scutil --set ComputerName "asylum"
-sudo scutil --set HostName "asylum"
-sudo scutil --set LocalHostName "asylum"
-sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "asylum"
+sudo scutil --set ComputerName "joze"
+sudo scutil --set HostName "joze"
+sudo scutil --set LocalHostName "joze"
+sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "joze"
 
 # Set standby delay to 24 hours (default is 1 hour)
 sudo pmset -a standbydelay 86400
@@ -43,7 +43,7 @@ defaults write com.apple.systemuiserver menuExtras -array \
 # defaults write NSGlobalDomain AppleHighlightColor -string "0.764700 0.976500 0.568600"
 
 # Enable Dark Theme
-defaults write /Library/Preferences/.GlobalPreferences AppleInterfaceTheme Dark
+# defaults write /Library/Preferences/.GlobalPreferences AppleInterfaceTheme Dark
 
 # Set sidebar icon size to medium
 defaults write NSGlobalDomain NSTableViewDefaultSizeMode -int 2
